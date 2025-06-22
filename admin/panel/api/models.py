@@ -74,11 +74,13 @@ class Task(models.Model):
         blank=True,
     )
     name = models.CharField(max_length=256)
-    notificate_before = models.DateTimeField(null=True, blank=True)
-    end_date = models.DateTimeField(null=True, blank=True)
+    notificate_date = models.DateTimeField(null=True, blank=True)
     
     is_important = models.BooleanField(default=False)
     is_complete = models.BooleanField(default=False)
+    
+    end_at = models.DateTimeField(null=True, blank=True)
+    compleated_at = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
